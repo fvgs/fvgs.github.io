@@ -7,6 +7,9 @@
     "dist": "node-sass src/ -o dist/",
     "watch": "npm run dist && node-sass -w src/ -o dist/"
   },
+  "dependencies": {
+    "normalize.css": "5.0.0"
+  },
   "devDependencies": {
     "http-server": "0.9.0",
     "node-sass": "3.10.1"
