@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "start": "http-server -a 127.0.0.1 -p 7890",
-    "dist": "node-sass src/ -o dist/",
-    "watch": "npm run dist && node-sass -w src/ -o dist/"
+    "dist": "node-sass --output-style compressed src/main.scss dist/main.min.css",
+    "watch": "npm run dist && node-sass -w --output-style compressed src/main.scss dist/main.min.css"
   },
   "dependencies": {
     "normalize.css": "5.0.0"
