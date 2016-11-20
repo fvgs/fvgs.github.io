@@ -5,13 +5,13 @@
   "scripts": {
     "start": "http-server -a 127.0.0.1 -p 7890",
     "dist": "node-sass --output-style compressed src/main.scss dist/main.min.css",
-    "watch": "npm run dist && node-sass -w --output-style compressed src/main.scss dist/main.min.css"
+    "watch": "yarn run dist && yarn run dist -- -w"
   },
   "dependencies": {
     "normalize.css": "5.0.0"
   },
   "devDependencies": {
     "http-server": "0.9.0",
-    "node-sass": "3.10.1"
+    "node-sass": "3.13.0"
   }
 }
