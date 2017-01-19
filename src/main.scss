@@ -5,6 +5,10 @@
 @import '../node_modules/animate.css/source/fading_entrances/fadeIn';
 @import '../node_modules/animate.css/source/attention_seekers/pulse';
 
+@mixin text-shadow() {
+  text-shadow: 0.08em 0.08em #0968a9;
+}
+
 body {
   height: 100vh;
   display: flex;
@@ -24,9 +28,9 @@ main {
 }
 
 .intro {
+  @include text-shadow();
   font-size: 4rem;
   font-weight: 700;
-  text-shadow: 0.08em 0.08em #0968a9;
   margin-bottom: 3rem;
   animation-duration: 2s;
 }
@@ -49,13 +53,17 @@ main {
   animation-duration: 1.2s;
 
   .fa {
+    @include text-shadow();
     font-size: 4.5rem;
     color: #ffffff;
     cursor: pointer;
-    transition: opacity 200ms ease-in-out;
+    transition: text-shadow 200ms ease-in-out;
 
     &:hover {
-      opacity: 0.6;
+      text-shadow: none;
+      border-bottom: 0.03em solid;
+      padding-bottom: 0.22em;
+      margin-bottom: -0.25em;
     }
   }
 
