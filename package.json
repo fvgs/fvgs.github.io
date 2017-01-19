@@ -3,15 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "http-server -a 127.0.0.1 -p 7890",
-    "dist": "node-sass --output-style compressed src/main.scss dist/main.min.css",
-    "watch": "yarn run dist && yarn run dist -- -w"
+    "start": "http-server -a 127.0.0.1 -p 7878",
+    "build": "node --harmony scripts/build.js",
+    "watch": "node --harmony scripts/watch.js"
   },
   "dependencies": {
+    "animate.css": "3.5.2",
     "normalize.css": "5.0.0"
   },
   "devDependencies": {
+    "autoprefixer": "6.6.1",
+    "gaze": "1.1.2",
     "http-server": "0.9.0",
-    "node-sass": "3.13.0"
+    "node-sass": "3.13.0",
+    "postcss": "5.2.10"
   }
 }
