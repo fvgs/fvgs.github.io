@@ -9,6 +9,10 @@
   text-shadow: 0.08em 0.08em #0968a9;
 }
 
+:root {
+  font-size: calc(0.5rem + 0.625vw);
+}
+
 body {
   height: 100vh;
   display: flex;
@@ -31,7 +35,8 @@ main {
   @include text-shadow();
   font-size: 4rem;
   font-weight: 700;
-  margin-bottom: 3rem;
+  text-align: center;
+  margin: 0 1.9rem 3rem;
   animation-duration: 2s;
 }
 
@@ -40,9 +45,10 @@ main {
 }
 
 .bio {
-  max-width: 45.84rem;
+  max-width: 46rem;
   font-size: 2rem;
   font-weight: 300;
+  margin: 0 4.5rem;
   animation-delay: 0.4s;
   animation-duration: 1.6s;
 }
