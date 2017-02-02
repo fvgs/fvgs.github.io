@@ -7,8 +7,10 @@ const reset = '\x1b[0m';
 
 const glasses = '\u{1f453} ';
 
-run(build);
-watch(file, build);
+(async () => {
+  await run(build);
+  watch(file, build);
+})();
 
 async function run(build) {
   const time = process.hrtime();

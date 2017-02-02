@@ -22,22 +22,20 @@ function build() {
         file: inputScssPath,
         outputStyle: 'compressed',
       },
-      (err, result) => {
+      async (err, result) => {
         if (err) {
-          throw err;
+          reject(err);
         }
-        postcss([autoprefixer])
-          .process(result.css, { from: inputScssPath, to: destCssPath })
-          .then((result) => {
-            result.warnings().forEach(warning => console.log(warning.toString()));
-            fs.writeFile(destCssPath, result.css, (err) => {
-              if (err) {
-                throw err;
-              }
-              console.log(`${sparkles} ${green}Finished!${reset}`);
-              resolve();
-            });
-          });
+        const res = await postcss([autoprefixer])
+          .process(result.css, { from: inputScssPath, to: destCssPath });
+        res.warnings().forEach(warning => console.log(warning.toString()));
+        fs.writeFile(destCssPath, res.css, (err) => {
+          if (err) {
+            reject(err);
+          }
+          console.log(`${sparkles} ${green}Finished!${reset}`);
+          resolve();
+        });
       }
     );
   });
