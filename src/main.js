@@ -4,3 +4,6 @@ var intro = document.getElementsByClassName('intro')[0];
     intro.className = intro.className.replace('fadeIn', 'attention pulse');
   }, { once: true });
 });
+
+var email = document.getElementById('email')
+email.href = ['mail', 'to', ':', 'felipe', '@', 'fvgs.ai'].join('')
